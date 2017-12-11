@@ -1,0 +1,26 @@
+//
+//  MyOvertimeTool-Prefix.pch
+//  MyOvertimeTool
+//
+//  Created by 龚宇 on 17/12/11.
+//  Copyright © 2017年 gongyuTest. All rights reserved.
+//
+
+#ifndef MyOvertimeTool_Prefix_pch
+#define MyOvertimeTool_Prefix_pch
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <CocoaLumberjack.h>
+    #import <Foundation/Foundation.h>
+    #import "XworksCore.h"
+    #import "XworksUtils.h"
+    #import "MBProgressHUD.h"
+    #import "SVProgressHUD.h"
+    #import "Masonry.h"
+
+    static DDLogLevel ddLogLevel = DDLogLevelVerbose;
+
+#endif
+
+#endif /* MyOvertimeTool_Prefix_pch */

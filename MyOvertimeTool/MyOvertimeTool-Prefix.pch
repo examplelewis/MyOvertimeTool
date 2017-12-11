@@ -18,6 +18,9 @@
     #import "MBProgressHUD.h"
     #import "SVProgressHUD.h"
     #import "Masonry.h"
+    #import "ToastManager.h"
+    #import "LogManager.h"
+    #import "FMDBManager.h"
 
     static DDLogLevel ddLogLevel = DDLogLevelVerbose;
 #endif

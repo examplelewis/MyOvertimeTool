@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC792DB81FDE143D0052C24C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792DB71FDE143D0052C24C /* AppDelegate.m */; };
+		AC792DBB1FDE143D0052C24C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792DBA1FDE143D0052C24C /* ViewController.m */; };
+		AC792DBE1FDE143D0052C24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC792DBC1FDE143D0052C24C /* Main.storyboard */; };
+		AC792DC01FDE143D0052C24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC792DBF1FDE143D0052C24C /* Assets.xcassets */; };
+		AC792DC31FDE143D0052C24C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC792DC11FDE143D0052C24C /* LaunchScreen.storyboard */; };
+		AC792DC61FDE143D0052C24C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792DC51FDE143D0052C24C /* main.m */; };
+		AC792DD01FDE143D0052C24C /* MyOvertimeToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792DCF1FDE143D0052C24C /* MyOvertimeToolTests.m */; };
+		AC792DDB1FDE143D0052C24C /* MyOvertimeToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792DDA1FDE143D0052C24C /* MyOvertimeToolUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC792DCC1FDE143D0052C24C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC792DAB1FDE143D0052C24C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC792DB21FDE143D0052C24C;
+			remoteInfo = MyOvertimeTool;
+		};
+		AC792DD71FDE143D0052C24C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC792DAB1FDE143D0052C24C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC792DB21FDE143D0052C24C;
+			remoteInfo = MyOvertimeTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC792DB31FDE143D0052C24C /* MyOvertimeTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOvertimeTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC792DB61FDE143D0052C24C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AC792DB71FDE143D0052C24C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC792DB91FDE143D0052C24C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AC792DBA1FDE143D0052C24C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AC792DBD1FDE143D0052C24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC792DBF1FDE143D0052C24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC792DC21FDE143D0052C24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC792DC41FDE143D0052C24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC792DC51FDE143D0052C24C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC792DCB1FDE143D0052C24C /* MyOvertimeToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyOvertimeToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC792DCF1FDE143D0052C24C /* MyOvertimeToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOvertimeToolTests.m; sourceTree = "<group>"; };
+		AC792DD11FDE143D0052C24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC792DD61FDE143D0052C24C /* MyOvertimeToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyOvertimeToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC792DDA1FDE143D0052C24C /* MyOvertimeToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOvertimeToolUITests.m; sourceTree = "<group>"; };
+		AC792DDC1FDE143D0052C24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC792DB01FDE143D0052C24C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC792DC81FDE143D0052C24C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC792DD31FDE143D0052C24C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC792DAA1FDE143D0052C24C = {
+			isa = PBXGroup;
+			children = (
+				AC792DB51FDE143D0052C24C /* MyOvertimeTool */,
+				AC792DCE1FDE143D0052C24C /* MyOvertimeToolTests */,
+				AC792DD91FDE143D0052C24C /* MyOvertimeToolUITests */,
+				AC792DB41FDE143D0052C24C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC792DB41FDE143D0052C24C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC792DB31FDE143D0052C24C /* MyOvertimeTool.app */,
+				AC792DCB1FDE143D0052C24C /* MyOvertimeToolTests.xctest */,
+				AC792DD61FDE143D0052C24C /* MyOvertimeToolUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC792DB51FDE143D0052C24C /* MyOvertimeTool */ = {
+			isa = PBXGroup;
+			children = (
+				AC792DB61FDE143D0052C24C /* AppDelegate.h */,
+				AC792DB71FDE143D0052C24C /* AppDelegate.m */,
+				AC792DB91FDE143D0052C24C /* ViewController.h */,
+				AC792DBA1FDE143D0052C24C /* ViewController.m */,
+				AC792DBC1FDE143D0052C24C /* Main.storyboard */,
+				AC792DBF1FDE143D0052C24C /* Assets.xcassets */,
+				AC792DC11FDE143D0052C24C /* LaunchScreen.storyboard */,
+				AC792DC41FDE143D0052C24C /* Info.plist */,
+				AC792DC51FDE143D0052C24C /* main.m */,
+			);
+			path = MyOvertimeTool;
+			sourceTree = "<group>";
+		};
+		AC792DCE1FDE143D0052C24C /* MyOvertimeToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC792DCF1FDE143D0052C24C /* MyOvertimeToolTests.m */,
+				AC792DD11FDE143D0052C24C /* Info.plist */,
+			);
+			path = MyOvertimeToolTests;
+			sourceTree = "<group>";
+		};
+		AC792DD91FDE143D0052C24C /* MyOvertimeToolUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC792DDA1FDE143D0052C24C /* MyOvertimeToolUITests.m */,
+				AC792DDC1FDE143D0052C24C /* Info.plist */,
+			);
+			path = MyOvertimeToolUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC792DB21FDE143D0052C24C /* MyOvertimeTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC792DDF1FDE143D0052C24C /* Build configuration list for PBXNativeTarget "MyOvertimeTool" */;
+			buildPhases = (
+				AC792DAF1FDE143D0052C24C /* Sources */,
+				AC792DB01FDE143D0052C24C /* Frameworks */,
+				AC792DB11FDE143D0052C24C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyOvertimeTool;
+			productName = MyOvertimeTool;
+			productReference = AC792DB31FDE143D0052C24C /* MyOvertimeTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC792DCA1FDE143D0052C24C /* MyOvertimeToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC792DE21FDE143D0052C24C /* Build configuration list for PBXNativeTarget "MyOvertimeToolTests" */;
+			buildPhases = (
+				AC792DC71FDE143D0052C24C /* Sources */,
+				AC792DC81FDE143D0052C24C /* Frameworks */,
+				AC792DC91FDE143D0052C24C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC792DCD1FDE143D0052C24C /* PBXTargetDependency */,
+			);
+			name = MyOvertimeToolTests;
+			productName = MyOvertimeToolTests;
+			productReference = AC792DCB1FDE143D0052C24C /* MyOvertimeToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC792DD51FDE143D0052C24C /* MyOvertimeToolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC792DE51FDE143D0052C24C /* Build configuration list for PBXNativeTarget "MyOvertimeToolUITests" */;
+			buildPhases = (
+				AC792DD21FDE143D0052C24C /* Sources */,
+				AC792DD31FDE143D0052C24C /* Frameworks */,
+				AC792DD41FDE143D0052C24C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC792DD81FDE143D0052C24C /* PBXTargetDependency */,
+			);
+			name = MyOvertimeToolUITests;
+			productName = MyOvertimeToolUITests;
+			productReference = AC792DD61FDE143D0052C24C /* MyOvertimeToolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC792DAB1FDE143D0052C24C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = gongyuTest;
+				TargetAttributes = {
+					AC792DB21FDE143D0052C24C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					AC792DCA1FDE143D0052C24C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AC792DB21FDE143D0052C24C;
+					};
+					AC792DD51FDE143D0052C24C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AC792DB21FDE143D0052C24C;
+					};
+				};
+			};
+			buildConfigurationList = AC792DAE1FDE143D0052C24C /* Build configuration list for PBXProject "MyOvertimeTool" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC792DAA1FDE143D0052C24C;
+			productRefGroup = AC792DB41FDE143D0052C24C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC792DB21FDE143D0052C24C /* MyOvertimeTool */,
+				AC792DCA1FDE143D0052C24C /* MyOvertimeToolTests */,
+				AC792DD51FDE143D0052C24C /* MyOvertimeToolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC792DB11FDE143D0052C24C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC792DC31FDE143D0052C24C /* LaunchScreen.storyboard in Resources */,
+				AC792DC01FDE143D0052C24C /* Assets.xcassets in Resources */,
+				AC792DBE1FDE143D0052C24C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC792DC91FDE143D0052C24C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC792DD41FDE143D0052C24C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC792DAF1FDE143D0052C24C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC792DBB1FDE143D0052C24C /* ViewController.m in Sources */,
+				AC792DC61FDE143D0052C24C /* main.m in Sources */,
+				AC792DB81FDE143D0052C24C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC792DC71FDE143D0052C24C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC792DD01FDE143D0052C24C /* MyOvertimeToolTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC792DD21FDE143D0052C24C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC792DDB1FDE143D0052C24C /* MyOvertimeToolUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC792DCD1FDE143D0052C24C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC792DB21FDE143D0052C24C /* MyOvertimeTool */;
+			targetProxy = AC792DCC1FDE143D0052C24C /* PBXContainerItemProxy */;
+		};
+		AC792DD81FDE143D0052C24C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC792DB21FDE143D0052C24C /* MyOvertimeTool */;
+			targetProxy = AC792DD71FDE143D0052C24C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC792DBC1FDE143D0052C24C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC792DBD1FDE143D0052C24C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC792DC11FDE143D0052C24C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC792DC21FDE143D0052C24C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC792DDD1FDE143D0052C24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AC792DDE1FDE143D0052C24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC792DE01FDE143D0052C24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2G352K7NR7;
+				INFOPLIST_FILE = MyOvertimeTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongyuTest.MyOvertimeTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC792DE11FDE143D0052C24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2G352K7NR7;
+				INFOPLIST_FILE = MyOvertimeTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongyuTest.MyOvertimeTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AC792DE31FDE143D0052C24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2G352K7NR7;
+				INFOPLIST_FILE = MyOvertimeToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongyuTest.MyOvertimeToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyOvertimeTool.app/MyOvertimeTool";
+			};
+			name = Debug;
+		};
+		AC792DE41FDE143D0052C24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2G352K7NR7;
+				INFOPLIST_FILE = MyOvertimeToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongyuTest.MyOvertimeToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyOvertimeTool.app/MyOvertimeTool";
+			};
+			name = Release;
+		};
+		AC792DE61FDE143D0052C24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2G352K7NR7;
+				INFOPLIST_FILE = MyOvertimeToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongyuTest.MyOvertimeToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyOvertimeTool;
+			};
+			name = Debug;
+		};
+		AC792DE71FDE143D0052C24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2G352K7NR7;
+				INFOPLIST_FILE = MyOvertimeToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongyuTest.MyOvertimeToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyOvertimeTool;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC792DAE1FDE143D0052C24C /* Build configuration list for PBXProject "MyOvertimeTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC792DDD1FDE143D0052C24C /* Debug */,
+				AC792DDE1FDE143D0052C24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC792DDF1FDE143D0052C24C /* Build configuration list for PBXNativeTarget "MyOvertimeTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC792DE01FDE143D0052C24C /* Debug */,
+				AC792DE11FDE143D0052C24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC792DE21FDE143D0052C24C /* Build configuration list for PBXNativeTarget "MyOvertimeToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC792DE31FDE143D0052C24C /* Debug */,
+				AC792DE41FDE143D0052C24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC792DE51FDE143D0052C24C /* Build configuration list for PBXNativeTarget "MyOvertimeToolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC792DE61FDE143D0052C24C /* Debug */,
+				AC792DE71FDE143D0052C24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC792DAB1FDE143D0052C24C /* Project object */;
+}

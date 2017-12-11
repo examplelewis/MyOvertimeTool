@@ -29,20 +29,21 @@
     
     // 导航栏样式
     BFAppearance *appearance = [BFAppearance sharedAppearance];
-    appearance.navigationBarTitleSize = 20.0f;
-    appearance.navigationBarBackgroundColor = [UIColor colorWithHexString:@"16a4b9"];
+    
+    appearance.navigationBarBackgroundColor = [UIColor colorWithHexString:@"#44A2F9"];
     appearance.navigationBarTintColor = [UIColor whiteColor];
     appearance.backgroundColor = BFCOLOR_GREY_1000_WHITE;
+    appearance.navigationBarTitleSize = 20.0f;
+    appearance.navigationBarTitleColor = [UIColor whiteColor];
     [appearance updateAppearance];
-    // 定义导航栏标题的字体样式
-    NSDictionary *titleAttrs = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:20.0], NSFontAttributeName, nil];
-    [[UINavigationBar appearance] setTitleTextAttributes:titleAttrs];
+    // 状态栏样式
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     // 自动隐藏键盘
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
     // SVProgressHUD
-    [SVProgressHUD setBackgroundColor:[UIColor colorWithHexString:@"16a4b9"]];
+    [SVProgressHUD setBackgroundColor:[UIColor colorWithHexString:@"#44A2F9"]];
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     

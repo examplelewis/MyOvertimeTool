@@ -57,6 +57,8 @@
 		AC792E711FDE1CA30052C24C /* BFLocalisationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E491FDE1CA30052C24C /* BFLocalisationManager.m */; };
 		AC792E751FDE1D850052C24C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC792E731FDE1D850052C24C /* Info.plist */; };
 		AC792E761FDE1D850052C24C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E741FDE1D850052C24C /* main.m */; };
+		AC792E7A1FDE27560052C24C /* welcome.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AC792E791FDE27560052C24C /* welcome.jpeg */; };
+		AC792E821FDE29AF0052C24C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E801FDE29AE0052C24C /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +183,9 @@
 		AC792E731FDE1D850052C24C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC792E741FDE1D850052C24C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC792E771FDE1DD20052C24C /* MyOvertimeTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyOvertimeTool-Prefix.pch"; sourceTree = "<group>"; };
+		AC792E791FDE27560052C24C /* welcome.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome.jpeg; sourceTree = "<group>"; };
+		AC792E7E1FDE29AD0052C24C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		AC792E801FDE29AE0052C24C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		E45A589AACCA3011A1418D54 /* Pods-MyOvertimeTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOvertimeTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyOvertimeTool/Pods-MyOvertimeTool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +267,8 @@
 				AC792E731FDE1D850052C24C /* Info.plist */,
 				AC792E741FDE1D850052C24C /* main.m */,
 				AC792E771FDE1DD20052C24C /* MyOvertimeTool-Prefix.pch */,
+				AC792E7B1FDE29470052C24C /* Controller */,
+				AC792E781FDE273B0052C24C /* Resource */,
 				AC792DE81FDE1CA20052C24C /* xworks */,
 			);
 			path = MyOvertimeTool;
@@ -473,6 +480,31 @@
 			path = services;
 			sourceTree = "<group>";
 		};
+		AC792E781FDE273B0052C24C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AC792E791FDE27560052C24C /* welcome.jpeg */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AC792E7B1FDE29470052C24C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC792E7C1FDE29990052C24C /* Base */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AC792E7C1FDE29990052C24C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AC792E7E1FDE29AD0052C24C /* BaseViewController.h */,
+				AC792E801FDE29AE0052C24C /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -586,6 +618,7 @@
 				AC792DC31FDE143D0052C24C /* LaunchScreen.storyboard in Resources */,
 				AC792DC01FDE143D0052C24C /* Assets.xcassets in Resources */,
 				AC792DBE1FDE143D0052C24C /* Main.storyboard in Resources */,
+				AC792E7A1FDE27560052C24C /* welcome.jpeg in Resources */,
 				AC792E6F1FDE1CA30052C24C /* ContactPickerImage.bundle in Resources */,
 				AC792E6D1FDE1CA30052C24C /* unicode_to_hanyu_pinyin.txt in Resources */,
 				AC792E751FDE1D850052C24C /* Info.plist in Resources */,
@@ -694,6 +727,7 @@
 				AC792E6B1FDE1CA30052C24C /* BFChineseToPinyinResource.m in Sources */,
 				AC792E4F1FDE1CA30052C24C /* BFFoundationMethods.m in Sources */,
 				AC792E701FDE1CA30052C24C /* BFCacheManager.m in Sources */,
+				AC792E821FDE29AF0052C24C /* BaseViewController.m in Sources */,
 				AC792E551FDE1CA30052C24C /* BFRuntimeClassModifications.m in Sources */,
 				AC792E511FDE1CA30052C24C /* BFPaths.m in Sources */,
 				AC792E661FDE1CA30052C24C /* BFInMemoryCache.m in Sources */,

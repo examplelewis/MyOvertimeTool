@@ -104,7 +104,12 @@ NSString* const BFAppearanceBackgroundChanged = @"com.bbdtekframework.appearance
         navigationBarTitleShadow.shadowColor = [UIColor lightGrayColor];
     }
     
-    NSDictionary *titleAttrs = [NSDictionary dictionaryWithObjectsAndKeys:navigationBarTitleColor, NSForegroundColorAttributeName, navigationBarTitleShadow, NSShadowAttributeName, [UIFont boldSystemFontOfSize:navigationBarTitleSize], NSFontAttributeName, nil];
+    NSDictionary *titleAttrs = @{};
+    if (navigationBarTitleShadow == nil) {
+        titleAttrs = [NSDictionary dictionaryWithObjectsAndKeys:navigationBarTitleColor, NSForegroundColorAttributeName, [UIFont boldSystemFontOfSize:navigationBarTitleSize], NSFontAttributeName, nil];
+    } else {
+        titleAttrs = [NSDictionary dictionaryWithObjectsAndKeys:navigationBarTitleColor, NSForegroundColorAttributeName, navigationBarTitleShadow, NSShadowAttributeName, [UIFont boldSystemFontOfSize:navigationBarTitleSize], NSFontAttributeName, nil];
+    }
     [[UINavigationBar appearance] setTitleTextAttributes:titleAttrs];
 }
 

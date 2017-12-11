@@ -20,7 +20,6 @@
     #import "Masonry.h"
 
     static DDLogLevel ddLogLevel = DDLogLevelVerbose;
-
 #endif
 
 #endif /* MyOvertimeTool_Prefix_pch */

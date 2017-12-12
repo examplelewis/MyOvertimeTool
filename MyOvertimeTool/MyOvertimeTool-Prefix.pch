@@ -21,6 +21,7 @@
     #import "ToastManager.h"
     #import "LogManager.h"
     #import "FMDBManager.h"
+    #import <NSDate+DateTools.h>
 
     static DDLogLevel ddLogLevel = DDLogLevelVerbose;
 #endif

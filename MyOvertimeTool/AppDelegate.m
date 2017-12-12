@@ -33,7 +33,7 @@
     appearance.navigationBarBackgroundColor = [UIColor colorWithHexString:@"#44A2F9"];
     appearance.navigationBarTintColor = [UIColor whiteColor];
     appearance.backgroundColor = BFCOLOR_GREY_1000_WHITE;
-    appearance.navigationBarTitleSize = 20.0f;
+    appearance.navigationBarTitleSize = 18.0f;
     appearance.navigationBarTitleColor = [UIColor whiteColor];
     [appearance updateAppearance];
     // 状态栏样式
@@ -46,6 +46,7 @@
     [SVProgressHUD setBackgroundColor:[UIColor colorWithHexString:@"#44A2F9"]];
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setMinimumDismissTimeInterval:3.0];
     
     return YES;
 }

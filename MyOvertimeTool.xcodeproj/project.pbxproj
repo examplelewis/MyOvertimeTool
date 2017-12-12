@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		33D7F3B0E26FC5EA70AF119E /* libPods-MyOvertimeTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0528A872FB25B3BD1FBFCAB /* libPods-MyOvertimeTool.a */; };
+		AC1BD2A31FDF790000FEFAFD /* MOTAddOvertimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD2A11FDF790000FEFAFD /* MOTAddOvertimeViewController.m */; };
+		AC1BD2A41FDF790000FEFAFD /* MOTAddOvertimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1BD2A21FDF790000FEFAFD /* MOTAddOvertimeViewController.xib */; };
 		AC792DB81FDE143D0052C24C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792DB71FDE143D0052C24C /* AppDelegate.m */; };
 		AC792DBB1FDE143D0052C24C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792DBA1FDE143D0052C24C /* ViewController.m */; };
 		AC792DBE1FDE143D0052C24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC792DBC1FDE143D0052C24C /* Main.storyboard */; };
@@ -83,6 +85,9 @@
 /* Begin PBXFileReference section */
 		91D58A32DAA21E0211C5B9F8 /* Pods-MyOvertimeTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOvertimeTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyOvertimeTool/Pods-MyOvertimeTool.debug.xcconfig"; sourceTree = "<group>"; };
 		A0528A872FB25B3BD1FBFCAB /* libPods-MyOvertimeTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyOvertimeTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1BD2A01FDF790000FEFAFD /* MOTAddOvertimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTAddOvertimeViewController.h; sourceTree = "<group>"; };
+		AC1BD2A11FDF790000FEFAFD /* MOTAddOvertimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTAddOvertimeViewController.m; sourceTree = "<group>"; };
+		AC1BD2A21FDF790000FEFAFD /* MOTAddOvertimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MOTAddOvertimeViewController.xib; sourceTree = "<group>"; };
 		AC792DB31FDE143D0052C24C /* MyOvertimeTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOvertimeTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC792DB61FDE143D0052C24C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AC792DB71FDE143D0052C24C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -498,6 +503,9 @@
 		AC792E7B1FDE29470052C24C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AC1BD2A01FDF790000FEFAFD /* MOTAddOvertimeViewController.h */,
+				AC1BD2A11FDF790000FEFAFD /* MOTAddOvertimeViewController.m */,
+				AC1BD2A21FDF790000FEFAFD /* MOTAddOvertimeViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -631,6 +639,7 @@
 				AC792E7A1FDE27560052C24C /* welcome.jpeg in Resources */,
 				AC792E6F1FDE1CA30052C24C /* ContactPickerImage.bundle in Resources */,
 				AC792E6D1FDE1CA30052C24C /* unicode_to_hanyu_pinyin.txt in Resources */,
+				AC1BD2A41FDF790000FEFAFD /* MOTAddOvertimeViewController.xib in Resources */,
 				AC792E751FDE1D850052C24C /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,6 +767,7 @@
 				AC792DB81FDE143D0052C24C /* AppDelegate.m in Sources */,
 				AC792E601FDE1CA30052C24C /* GTMBase64.m in Sources */,
 				AC792E6C1FDE1CA30052C24C /* BFPinyinHelper.m in Sources */,
+				AC1BD2A31FDF790000FEFAFD /* MOTAddOvertimeViewController.m in Sources */,
 				AC792E5B1FDE1CA30052C24C /* BFValidationUtils.m in Sources */,
 				AC792E5A1FDE1CA30052C24C /* BFDateUtils.m in Sources */,
 				AC792E651FDE1CA30052C24C /* BFDiskCache.m in Sources */,

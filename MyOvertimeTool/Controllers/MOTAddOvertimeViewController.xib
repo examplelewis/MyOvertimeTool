@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MOTAddOvertimeViewController">
+            <connections>
+                <outlet property="datePicker" destination="6pw-Db-Odw" id="q6q-fy-fF6"/>
+                <outlet property="reasonInput" destination="DYi-Qn-u9A" id="Wes-pf-elN"/>
+                <outlet property="timeLabel" destination="zqP-Pv-IrI" id="X02-xx-cXv"/>
+                <outlet property="typeButton" destination="R7L-wd-ZDL" id="bmD-zs-Dbf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加班日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T1-AR-iIm">
+                    <rect key="frame" x="16" y="326" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6pw-Db-Odw">
+                    <rect key="frame" x="0.0" y="367" width="375" height="216"/>
+                    <date key="date" timeIntervalSinceReferenceDate="534739670.99632299">
+                        <!--2017-12-12 02:47:50 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="datePickerValueChanged:" destination="-1" eventType="valueChanged" id="FPa-xj-GH3"/>
+                    </connections>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7L-wd-ZDL">
+                    <rect key="frame" x="16" y="603" width="343" height="44"/>
+                    <color key="backgroundColor" red="0.26666666666666666" green="0.63529411764705879" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="WaQ-2p-K0B"/>
+                    </constraints>
+                    <state key="normal" title="加班类型">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="changeOvertimeType:" destination="-1" eventType="touchUpInside" id="r7I-QT-z9n"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加班缘由" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-aR-F8g">
+                    <rect key="frame" x="16" y="40" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="一天加班" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DYi-Qn-u9A">
+                    <rect key="frame" x="16" y="81" width="343" height="225"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqP-Pv-IrI">
+                    <rect key="frame" x="289" y="326" width="69.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5T1-AR-iIm" firstAttribute="top" secondItem="DYi-Qn-u9A" secondAttribute="bottom" constant="20" id="3jY-9Z-fQr"/>
+                <constraint firstItem="R7L-wd-ZDL" firstAttribute="top" secondItem="6pw-Db-Odw" secondAttribute="bottom" constant="20" id="7lG-gk-YMT"/>
+                <constraint firstItem="DYi-Qn-u9A" firstAttribute="top" secondItem="EWx-aR-F8g" secondAttribute="bottom" constant="20" id="92W-I3-thI"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="R7L-wd-ZDL" secondAttribute="trailing" constant="16" id="DlZ-1t-aVy"/>
+                <constraint firstItem="6pw-Db-Odw" firstAttribute="top" secondItem="5T1-AR-iIm" secondAttribute="bottom" constant="20" id="HpG-9B-bgb"/>
+                <constraint firstItem="DYi-Qn-u9A" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="KFq-6Q-IsN"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zqP-Pv-IrI" secondAttribute="trailing" constant="16" id="KPx-Q7-X6C"/>
+                <constraint firstItem="EWx-aR-F8g" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="LPn-xm-QeN"/>
+                <constraint firstItem="6pw-Db-Odw" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="OJS-K5-FsK"/>
+                <constraint firstItem="EWx-aR-F8g" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="WGN-Bz-cnr"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="R7L-wd-ZDL" secondAttribute="bottom" constant="20" id="Yf2-rH-dgF"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="DYi-Qn-u9A" secondAttribute="trailing" constant="16" id="bRR-K7-wqA"/>
+                <constraint firstItem="zqP-Pv-IrI" firstAttribute="top" secondItem="DYi-Qn-u9A" secondAttribute="bottom" constant="20" id="dbL-ue-AE8"/>
+                <constraint firstItem="6pw-Db-Odw" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="lMU-b1-JZS"/>
+                <constraint firstItem="5T1-AR-iIm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="rdv-6T-s4c"/>
+                <constraint firstItem="R7L-wd-ZDL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="yK3-e2-5BF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-114.5" y="9.5"/>
+        </view>
+    </objects>
+</document>

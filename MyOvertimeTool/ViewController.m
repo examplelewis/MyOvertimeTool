@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MOTAddOvertimeViewController.h"
+#import "MOTOvertimeListViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSArray *titles;
@@ -32,17 +33,21 @@
     // Data
     headers = @[@"Dashboard", @"添加", @"记录", @"设置"];
     titles = @[@[@"可调休天数", @"最近一次加班的日期", @"最近一次调休的日期"], @[@"添加一次加班", @"添加一次调休"], @[@"加班记录", @"调休记录"], @[@"设置"]];
+    values = [NSMutableArray arrayWithArray:@[@"", @"", @""]];
+    
+    // UI
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     NSString *restDays = [NSString stringWithFormat:@"%.1f 天", [[FMDBManager sharedManager] getRestDays]];
     NSString *latestOvertime = [[FMDBManager sharedManager] getLatestTimeOfOvertime];
     values = [NSMutableArray arrayWithArray:@[restDays, latestOvertime, @"3"]];
     
-    // UI
-    _tableView.rowHeight = 44.0f;
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -71,11 +76,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.section == 0) {
+        return;
+    }
+    
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             MOTAddOvertimeViewController *vc = [[MOTAddOvertimeViewController alloc] initWithNibName:@"MOTAddOvertimeViewController" bundle:nil];
             [self.navigationController pushViewController:vc animated:YES];
+        } else {
+            
         }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            MOTOvertimeListViewController *vc = [[MOTOvertimeListViewController alloc] initWithNibName:@"MOTOvertimeListViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        } else {
+            
+        }
+    } else {
+        
     }
 }
 

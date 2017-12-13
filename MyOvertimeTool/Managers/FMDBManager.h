@@ -20,5 +20,6 @@
 - (BOOL)checkHasOvertimeOnDay:(NSString *)day;
 - (float)getRestDays;
 - (NSString *)getLatestTimeOfOvertime;
+- (NSArray *)fetchAllOvertimes;
 
 @end

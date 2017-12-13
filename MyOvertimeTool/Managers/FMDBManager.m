@@ -236,5 +236,33 @@ static FMDBManager *_sharedManager;
     
     return [result copy];
 }
+- (NSArray *)fetchAllOvertimes {
+    if (![db open]) {
+        [self openDatabaseError];
+        
+        return @[];
+    }
+    
+    // 为数据库设置缓存，提高查询效率
+    [db setShouldCacheStatements:YES];
+    
+    NSMutableArray *fetched = [NSMutableArray array];
+    FMResultSet *rs = [db executeQuery:@"select * from MOTOvertime order by time desc"];
+    while ([rs next]) {
+        NSInteger overtimeId = [rs intForColumn:@"id"];
+        NSString *reason = [rs stringForColumn:@"reason"];
+        NSString *time = [rs stringForColumn:@"time"];
+        NSInteger type = [rs intForColumn:@"type"];
+        NSString *addtime = [rs stringForColumn:@"addtime"];
+        NSInteger used = [rs intForColumn:@"used"];
+        
+        [fetched addObject:@{@"id": @(overtimeId), @"reason": reason, @"time": time, @"type": @(type), @"addtime": addtime, @"used": @(used)}];
+    }
+    
+    [rs close];
+    [db close];
+    
+    return [fetched copy];
+}
 
 @end

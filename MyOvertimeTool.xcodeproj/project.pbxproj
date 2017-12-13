@@ -69,6 +69,10 @@
 		ACE153FE1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE153FC1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.xib */; };
 		ACE154021FE0C23F006FD911 /* MOTAddRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE154001FE0C23F006FD911 /* MOTAddRestViewController.m */; };
 		ACE154031FE0C23F006FD911 /* MOTAddRestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE154011FE0C23F006FD911 /* MOTAddRestViewController.xib */; };
+		ACE154071FE12468006FD911 /* MOTRestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE154051FE12468006FD911 /* MOTRestListViewController.m */; };
+		ACE154081FE12468006FD911 /* MOTRestListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE154061FE12468006FD911 /* MOTRestListViewController.xib */; };
+		ACE1540C1FE124FD006FD911 /* MOTRestListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE1540A1FE124FD006FD911 /* MOTRestListTableViewCell.m */; };
+		ACE1540D1FE124FD006FD911 /* MOTRestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE1540B1FE124FD006FD911 /* MOTRestListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +216,12 @@
 		ACE153FF1FE0C23F006FD911 /* MOTAddRestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTAddRestViewController.h; sourceTree = "<group>"; };
 		ACE154001FE0C23F006FD911 /* MOTAddRestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTAddRestViewController.m; sourceTree = "<group>"; };
 		ACE154011FE0C23F006FD911 /* MOTAddRestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MOTAddRestViewController.xib; sourceTree = "<group>"; };
+		ACE154041FE12468006FD911 /* MOTRestListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTRestListViewController.h; sourceTree = "<group>"; };
+		ACE154051FE12468006FD911 /* MOTRestListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTRestListViewController.m; sourceTree = "<group>"; };
+		ACE154061FE12468006FD911 /* MOTRestListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MOTRestListViewController.xib; sourceTree = "<group>"; };
+		ACE154091FE124FD006FD911 /* MOTRestListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTRestListTableViewCell.h; sourceTree = "<group>"; };
+		ACE1540A1FE124FD006FD911 /* MOTRestListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTRestListTableViewCell.m; sourceTree = "<group>"; };
+		ACE1540B1FE124FD006FD911 /* MOTRestListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MOTRestListTableViewCell.xib; sourceTree = "<group>"; };
 		E45A589AACCA3011A1418D54 /* Pods-MyOvertimeTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOvertimeTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyOvertimeTool/Pods-MyOvertimeTool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -528,6 +538,9 @@
 				ACE153FF1FE0C23F006FD911 /* MOTAddRestViewController.h */,
 				ACE154001FE0C23F006FD911 /* MOTAddRestViewController.m */,
 				ACE154011FE0C23F006FD911 /* MOTAddRestViewController.xib */,
+				ACE154041FE12468006FD911 /* MOTRestListViewController.h */,
+				ACE154051FE12468006FD911 /* MOTRestListViewController.m */,
+				ACE154061FE12468006FD911 /* MOTRestListViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -551,6 +564,9 @@
 				ACE153FA1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.h */,
 				ACE153FB1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.m */,
 				ACE153FC1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.xib */,
+				ACE154091FE124FD006FD911 /* MOTRestListTableViewCell.h */,
+				ACE1540A1FE124FD006FD911 /* MOTRestListTableViewCell.m */,
+				ACE1540B1FE124FD006FD911 /* MOTRestListTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -672,9 +688,11 @@
 				AC792DBE1FDE143D0052C24C /* Main.storyboard in Resources */,
 				AC792E7A1FDE27560052C24C /* welcome.jpeg in Resources */,
 				ACE154031FE0C23F006FD911 /* MOTAddRestViewController.xib in Resources */,
+				ACE1540D1FE124FD006FD911 /* MOTRestListTableViewCell.xib in Resources */,
 				AC792E6F1FDE1CA30052C24C /* ContactPickerImage.bundle in Resources */,
 				AC792E6D1FDE1CA30052C24C /* unicode_to_hanyu_pinyin.txt in Resources */,
 				AC1BD2A41FDF790000FEFAFD /* MOTAddOvertimeViewController.xib in Resources */,
+				ACE154081FE12468006FD911 /* MOTRestListViewController.xib in Resources */,
 				AC792E751FDE1D850052C24C /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,6 +781,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC792E671FDE1CA30052C24C /* BFCache.m in Sources */,
+				ACE1540C1FE124FD006FD911 /* MOTRestListTableViewCell.m in Sources */,
 				AC792E4E1FDE1CA30052C24C /* BFInMemoryCache.m in Sources */,
 				ACE154021FE0C23F006FD911 /* MOTAddRestViewController.m in Sources */,
 				AC792E861FDE58D50052C24C /* FMDBManager.m in Sources */,
@@ -777,6 +796,7 @@
 				AC792E5D1FDE1CA30052C24C /* BFColorUtils.m in Sources */,
 				AC792E691FDE1CA30052C24C /* BFPinyinFormatter.m in Sources */,
 				AC792E5E1FDE1CA30052C24C /* BFImageUtils.m in Sources */,
+				ACE154071FE12468006FD911 /* MOTRestListViewController.m in Sources */,
 				AC792E5C1FDE1CA30052C24C /* BFStringUtils.m in Sources */,
 				AC792E561FDE1CA30052C24C /* BFNonEmptyCollectionTesting.m in Sources */,
 				AC792E4C1FDE1CA30052C24C /* BFError.m in Sources */,

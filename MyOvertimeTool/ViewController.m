@@ -10,6 +10,7 @@
 #import "MOTAddOvertimeViewController.h"
 #import "MOTAddRestViewController.h"
 #import "MOTOvertimeListViewController.h"
+#import "MOTRestListViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSArray *titles;
@@ -98,7 +99,8 @@
             MOTOvertimeListViewController *vc = [[MOTOvertimeListViewController alloc] initWithNibName:@"MOTOvertimeListViewController" bundle:nil];
             [self.navigationController pushViewController:vc animated:YES];
         } else {
-            
+            MOTRestListViewController *vc = [[MOTRestListViewController alloc] initWithNibName:@"MOTRestListViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     } else {
         

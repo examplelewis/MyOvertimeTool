@@ -16,10 +16,15 @@
 + (FMDBManager *)sharedManager;
 
 - (NSArray *)fetchOvertimeTypes;
-- (BOOL)insertOvertimeWithReason:(NSString *)reason time:(NSString *)time type:(NSInteger)type;
-- (BOOL)checkHasOvertimeOnDay:(NSString *)day;
-- (float)getRestDays;
-- (NSString *)getLatestTimeOfOvertime;
 - (NSArray *)fetchAllOvertimes;
+- (NSArray *)fetchAllRests;
+- (BOOL)checkHasOvertimeOnDay:(NSString *)day;
+- (float)fetchRestDays;
+- (NSString *)fetchLatestTimeOfOvertime;
+- (NSString *)fetchLatestTimeOfRest;
+
+- (BOOL)insertOvertimeWithReason:(NSString *)reason time:(NSString *)time type:(NSInteger)type;
+- (BOOL)insertRestWithReason:(NSString *)reason start:(NSString *)start end:(NSString *)end startDetail:(NSString *)startDetail endDetail:(NSString *)endDetail total:(float)total;
+- (BOOL)updateRestLeft:(float)day plus:(BOOL)plus;
 
 @end

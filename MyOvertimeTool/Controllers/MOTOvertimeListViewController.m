@@ -54,8 +54,7 @@
     cell.typeLabel.text = type[@"title"];
     cell.timeLabel.text = overtime[@"time"];
     cell.reasonLabel.text = [NSString stringWithFormat:@"缘由：%@", overtime[@"reason"]];
-    cell.statusLabel.text = [overtime[@"used"] integerValue] == 0 ? @"可调休" : @"已调休";
-    cell.statusLabel.textColor = [UIColor colorWithHexString:[overtime[@"used"] integerValue] == 0 ? @"42d852" : @"d9453d"];
+    cell.statusLabel.text = [NSString stringWithFormat:@"%.1f", 1.0 / [type[@"value"] floatValue]];
     
     return cell;
 }

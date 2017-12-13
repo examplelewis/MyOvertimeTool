@@ -81,8 +81,11 @@
     }
     
     if ([[FMDBManager sharedManager] insertOvertimeWithReason:self.reasonInput.text time:[self.datePicker.date toNSString:@"yyyy-MM-dd"] type:[overtimeType[@"id"] integerValue]]) {
-        [[ToastManager sharedManager] showSuccess:@"添加成功"];
-        [self.navigationController popViewControllerAnimated:YES];
+        float days = 1.0 / [overtimeType[@"value"] floatValue];
+        if ([[FMDBManager sharedManager] updateRestLeft:days plus:YES]) {
+            [[ToastManager sharedManager] showSuccess:@"添加成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MOTAddOvertimeViewController.h"
+#import "MOTAddRestViewController.h"
 #import "MOTOvertimeListViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource> {
@@ -40,9 +41,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSString *restDays = [NSString stringWithFormat:@"%.1f 天", [[FMDBManager sharedManager] getRestDays]];
-    NSString *latestOvertime = [[FMDBManager sharedManager] getLatestTimeOfOvertime];
-    values = [NSMutableArray arrayWithArray:@[restDays, latestOvertime, @"3"]];
+    NSString *restDays = [NSString stringWithFormat:@"%.1f 天", [[FMDBManager sharedManager] fetchRestDays]];
+    NSString *latestOvertime = [[FMDBManager sharedManager] fetchLatestTimeOfOvertime];
+    NSString *latestRest = [[FMDBManager sharedManager] fetchLatestTimeOfRest];
+    values = [NSMutableArray arrayWithArray:@[restDays, latestOvertime, latestRest]];
     
     [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -62,13 +64,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"mainCell"];
     }
     
-    cell.textLabel.text = titles[indexPath.section][indexPath.row];
-    if (indexPath.section == 0) {
-        cell.detailTextLabel.text = values[indexPath.row];
-    }
+    cell.textLabel.text = (indexPath.section == 0 && indexPath.row == 2) ? [NSString stringWithFormat:@"\n%@\n", titles[indexPath.section][indexPath.row]] : titles[indexPath.section][indexPath.row];
+    cell.detailTextLabel.text = indexPath.section == 0 ? values[indexPath.row] : @"";
+    cell.detailTextLabel.numberOfLines = (indexPath.section == 0 && indexPath.row == 2) ? 3 : 1;
+    cell.textLabel.numberOfLines = (indexPath.section == 0 && indexPath.row == 2) ? 3 : 1;
     cell.accessoryType = indexPath.section == 0 ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 0 && indexPath.row == 2) ? 88 : 44;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return headers[section];
@@ -85,7 +90,8 @@
             MOTAddOvertimeViewController *vc = [[MOTAddOvertimeViewController alloc] initWithNibName:@"MOTAddOvertimeViewController" bundle:nil];
             [self.navigationController pushViewController:vc animated:YES];
         } else {
-            
+            MOTAddRestViewController *vc = [[MOTAddRestViewController alloc] initWithNibName:@"MOTAddRestViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {

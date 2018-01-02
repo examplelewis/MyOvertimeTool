@@ -18,16 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Bb2-KR-tLg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyOvertimeTool" translatesAutoresizingMaskIntoConstraints="NO" id="Sgh-hd-Ity">
+                                <rect key="frame" x="59" y="205" width="256" height="256"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bb2-KR-tLg" secondAttribute="bottom" id="BEm-Wu-puP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bb2-KR-tLg" secondAttribute="trailing" id="q0d-d7-WOX"/>
-                            <constraint firstItem="Bb2-KR-tLg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qiC-Yj-yME"/>
-                            <constraint firstItem="Bb2-KR-tLg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="xOH-ks-7sc"/>
+                            <constraint firstItem="Sgh-hd-Ity" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OMD-vA-1Hx"/>
+                            <constraint firstItem="Sgh-hd-Ity" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eOb-QX-MbB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="welcome.jpeg" width="1080" height="1920"/>
+        <image name="MyOvertimeTool" width="256" height="256"/>
     </resources>
 </document>

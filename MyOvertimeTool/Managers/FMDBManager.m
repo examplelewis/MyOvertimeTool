@@ -48,7 +48,7 @@ static FMDBManager *_sharedManager;
 }
 - (void)createTable {
     if (![db tableExists:@"MOTOvertime"]) {
-        BOOL success = [db executeUpdate:@"CREATE TABLE MOTOvertime(id integer PRIMARY KEY AUTOINCREMENT, reason text, time text, type integer, addtime text)"];
+        BOOL success = [db executeUpdate:@"CREATE TABLE MOTOvertime(id integer PRIMARY KEY AUTOINCREMENT, reason text, time text, start text, end text, type integer, addtime text)"];
         
         if (!success) {
             NSString *errorMsg = [NSString stringWithFormat:@"数据表 MOTOvertime 不存在且建立失败: %d - %@", [db lastErrorCode], [db lastErrorMessage]];
@@ -156,10 +156,12 @@ static FMDBManager *_sharedManager;
         NSInteger overtimeId = [rs intForColumn:@"id"];
         NSString *reason = [rs stringForColumn:@"reason"];
         NSString *time = [rs stringForColumn:@"time"];
+        NSString *start = [rs stringForColumn:@"start"];
+        NSString *end = [rs stringForColumn:@"end"];
         NSInteger type = [rs intForColumn:@"type"];
         NSString *addtime = [rs stringForColumn:@"addtime"];
         
-        [fetched addObject:@{@"id": @(overtimeId), @"reason": reason, @"time": time, @"type": @(type), @"addtime": addtime}];
+        [fetched addObject:@{@"id": @(overtimeId), @"reason": reason, @"time": time, @"start": start, @"end": end, @"type": @(type), @"addtime": addtime}];
     }
     
     [rs close];
@@ -312,7 +314,9 @@ static FMDBManager *_sharedManager;
     [db setShouldCacheStatements:YES];
     
     NSString *addtime = [[NSDate date] toNSString:@"yyyy-MM-dd HH:mm:ss.SSS"];
-    BOOL success = [db executeUpdate:@"INSERT INTO MOTOvertime (id, reason, time, type, addtime) values(?, ?, ?, ?, ?)", NULL, reason, time, @(type), addtime];
+    NSString *start = [time stringByAppendingString:@" 00:00:00.000"];
+    NSString *end = [time stringByAppendingString:@" 23:59:59.999"];
+    BOOL success = [db executeUpdate:@"INSERT INTO MOTOvertime (id, reason, time, start, end, type, addtime) values(?, ?, ?, ?, ?, ?, ?)", NULL, reason, time, start, end, @(type), addtime];
     
     [db close];
     

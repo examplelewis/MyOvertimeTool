@@ -7,6 +7,7 @@
 //
 
 #import "MOTAddOvertimeViewController.h"
+#import <DTTimePeriod.h>
 
 @interface MOTAddOvertimeViewController () {
     NSArray *overtimeTypes;
@@ -73,13 +74,39 @@
         [self.reasonInput resignFirstResponder];
     }
     
+    // 查询当天是否有加班记录
     if ([[FMDBManager sharedManager] checkHasOvertimeOnDay:[self.datePicker.date toNSString:@"yyyy-MM-dd"]]) {
         NSString *errorMsg = [NSString stringWithFormat:@"%@ 已经有一条加班记录，不可重复添加", [self.datePicker.date toNSString:@"yyyy-MM-dd"]];
         [[ToastManager sharedManager] showError:errorMsg];
-        
         return;
     }
     
+    // 查询当天是否有调休记录
+    NSString *dateString = [self.datePicker.date toNSString:@"yyyy-MM-dd"];
+    NSDate *currentFromDate = [NSDate dateFromNSString:[dateString stringByAppendingString:@" 00:00:00.000"] withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+    NSDate *currentEndDate = [NSDate dateFromNSString:[dateString stringByAppendingString:@" 23:59:59.999"] withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+    DTTimePeriod *currentPeriod = [DTTimePeriod timePeriodWithStartDate:currentFromDate endDate:currentEndDate];
+    
+    NSArray *rests = [[FMDBManager sharedManager] fetchAllRests];
+    BOOL isRestIntersect = NO;
+    for (NSInteger i = 0; i < rests.count; i++) {
+        NSDictionary *rest = rests[i];
+        
+        NSDate *fromDate = [NSDate dateFromNSString:rest[@"startDetail"] withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+        NSDate *endDate = [NSDate dateFromNSString:rest[@"endDetail"] withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+        DTTimePeriod *period = [DTTimePeriod timePeriodWithStartDate:fromDate endDate:endDate];
+        
+        if ([currentPeriod intersects:period]) {
+            isRestIntersect = YES;
+            break;
+        }
+    }
+    if (isRestIntersect) {
+        [[ToastManager sharedManager] showError:@"选定的日期与调休已有记录冲突，不可重复添加"];
+        return;
+    }
+    
+    // 添加
     if ([[FMDBManager sharedManager] insertOvertimeWithReason:self.reasonInput.text time:[self.datePicker.date toNSString:@"yyyy-MM-dd"] type:[overtimeType[@"id"] integerValue]]) {
         float days = 1.0 / [overtimeType[@"value"] floatValue];
         if ([[FMDBManager sharedManager] updateRestLeft:days plus:YES]) {

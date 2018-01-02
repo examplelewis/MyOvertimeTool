@@ -105,7 +105,7 @@
         [self.reasonInput resignFirstResponder];
     }
     
-    // 先查询要调休时间是否已经设置调休了
+    // 为 DTTimePeriod 做准备
     NSString *fromDetail = [self.fromDatePicker.date toNSString:@"yyyy-MM-dd"];
     if ([fromSelected isEqualToString:@"上午"]) {
         fromDetail = [fromDetail stringByAppendingString:@" 00:00:00.000"];
@@ -122,9 +122,10 @@
     NSDate *currentEndDate = [NSDate dateFromNSString:endDetail withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
     DTTimePeriod *currentPeriod = [DTTimePeriod timePeriodWithStartDate:currentFromDate endDate:currentEndDate];
     
+    // 查询当天是否有调休记录
     NSArray *rests = [[FMDBManager sharedManager] fetchAllRests];
-    BOOL isIntersect = NO;
-    for (NSInteger i = 0 ; i < rests.count; i++) {
+    BOOL isRestIntersect = NO;
+    for (NSInteger i = 0; i < rests.count; i++) {
         NSDictionary *rest = rests[i];
         
         NSDate *fromDate = [NSDate dateFromNSString:rest[@"startDetail"] withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
@@ -132,23 +133,41 @@
         DTTimePeriod *period = [DTTimePeriod timePeriodWithStartDate:fromDate endDate:endDate];
         
         if ([currentPeriod intersects:period]) {
-            isIntersect = YES;
+            isRestIntersect = YES;
             break;
         }
     }
-    if (isIntersect) {
-        [[ToastManager sharedManager] showError:@"选定的日期与已有记录冲突，不可重复添加"];
-        
+    if (isRestIntersect) {
+        [[ToastManager sharedManager] showError:@"选定的日期与调休已有记录冲突，不可重复添加"];
         return;
     }
     
+    // 查询当天是否有加班记录
+    NSArray *overtimes = [[FMDBManager sharedManager] fetchAllOvertimes];
+    BOOL isOvertimeIntersect = NO;
+    for (NSInteger i = 0; i < overtimes.count; i++) {
+        NSDictionary *overtime = overtimes[i];
+        
+        NSDate *fromDate = [NSDate dateFromNSString:overtime[@"start"] withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+        NSDate *endDate = [NSDate dateFromNSString:overtime[@"end"] withFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+        DTTimePeriod *period = [DTTimePeriod timePeriodWithStartDate:fromDate endDate:endDate];
+        
+        if ([currentPeriod intersects:period]) {
+            isOvertimeIntersect = YES;
+            break;
+        }
+    }
+    if (isOvertimeIntersect) {
+        [[ToastManager sharedManager] showError:@"选定的日期与加班已有记录冲突，不可重复添加"];
+        return;
+    }
     
     // 再查询还有几天假
     if ([[FMDBManager sharedManager] fetchRestDays] < [self calcTotalDays]) {
         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"警告" message:@"调休的天数大于可调休的天数，这意味着需要另行请假，是否继续？" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"是，确认请假" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            [self commitRest];
+            [self commitRest];
         }];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"否，返回修改" style:UIAlertActionStyleCancel handler:nil];
         
@@ -157,7 +176,7 @@
         
         [self presentViewController:ac animated:YES completion:nil];
     } else {
-//        [self commitRest];
+        [self commitRest];
     }
 }
 - (void)fromDatePickerDidChange:(UIDatePicker *)sender {

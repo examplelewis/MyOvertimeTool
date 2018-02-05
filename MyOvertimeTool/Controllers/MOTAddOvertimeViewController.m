@@ -10,8 +10,7 @@
 #import <DTTimePeriod.h>
 
 @interface MOTAddOvertimeViewController () {
-    NSArray *overtimeTypes;
-    NSDictionary *overtimeType;
+    MOTSettingObject *overtimeType;
     
     UIAlertController *ac;
 }
@@ -36,24 +35,23 @@
 }
 - (void)setupUIAndData {
     // Data
-    overtimeTypes = [[FMDBManager sharedManager] fetchOvertimeTypes];
-    overtimeType = overtimeTypes.firstObject;
+    overtimeType = [FMDBManager sharedManager].overtimeTypes.firstObject;
     
     // UI
     self.timeLabel.text = [[NSDate date] toNSString:@"yyyy-MM-dd"];
 //    self.datePicker.minimumDate = [NSDate dateWithYear:2018 month:1 day:1];
     self.datePicker.maximumDate = [NSDate date];
     [self.typeButton roundCornorWithRadius:4.0 borderColor:nil borderWidth:0.0];
-    [self.typeButton setTitle:overtimeType[@"title"] forState:UIControlStateNormal];
+    [self.typeButton setTitle:overtimeType.title forState:UIControlStateNormal];
     [self.reasonInput roundCornorWithRadius:4.0 borderColor:BFCOLOR_GREY_300 borderWidth:1.0 / [UIScreen mainScreen].scale];
     
     ac = [UIAlertController alertControllerWithTitle:@"请选择加班类型" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    for (NSInteger i = 0; i < overtimeTypes.count; i++) {
-        NSDictionary *type = overtimeTypes[i];
+    for (NSInteger i = 0; i < [FMDBManager sharedManager].overtimeTypes.count; i++) {
+        MOTSettingObject *type = [FMDBManager sharedManager].overtimeTypes[i];
         
-        UIAlertAction *action = [UIAlertAction actionWithTitle:type[@"title"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *action = [UIAlertAction actionWithTitle:type.title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             overtimeType = type;
-            [self.typeButton setTitle:overtimeType[@"title"] forState:UIControlStateNormal];
+            [self.typeButton setTitle:overtimeType.title forState:UIControlStateNormal];
         }];
         
         [ac addAction:action];
@@ -107,8 +105,8 @@
     }
     
     // 添加
-    if ([[FMDBManager sharedManager] insertOvertimeWithReason:self.reasonInput.text time:[self.datePicker.date toNSString:@"yyyy-MM-dd"] type:[overtimeType[@"id"] integerValue]]) {
-        float days = 1.0 / [overtimeType[@"value"] floatValue];
+    if ([[FMDBManager sharedManager] insertOvertimeWithReason:self.reasonInput.text time:[self.datePicker.date toNSString:@"yyyy-MM-dd"] type:overtimeType.idI]) {
+        float days = 1.0 / [overtimeType.value floatValue];
         if ([[FMDBManager sharedManager] updateRestLeft:days plus:YES]) {
             [[ToastManager sharedManager] showSuccess:@"添加成功"];
             [self.navigationController popViewControllerAnimated:YES];

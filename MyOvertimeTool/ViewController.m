@@ -42,7 +42,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSString *restDays = [NSString stringWithFormat:@"%.1f 天", [[FMDBManager sharedManager] fetchRestDays]];
+    NSString *restDays = [NSString stringWithFormat:@"%.1f 天", [[FMDBManager sharedManager].restLefts.firstObject.value floatValue]];
     NSString *latestOvertime = [[FMDBManager sharedManager] fetchLatestTimeOfOvertime];
     NSString *latestRest = [[FMDBManager sharedManager] fetchLatestTimeOfRest];
     values = [NSMutableArray arrayWithArray:@[restDays, latestOvertime, latestRest]];

@@ -62,6 +62,7 @@
 		AC792E861FDE58D50052C24C /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E851FDE58D50052C24C /* FMDBManager.m */; };
 		AC792E891FDE5AF00052C24C /* ToastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E881FDE5AF00052C24C /* ToastManager.m */; };
 		AC792E8C1FDE5F980052C24C /* LogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E8B1FDE5F980052C24C /* LogManager.m */; };
+		ACD5A9DD2027EBBA00A523C3 /* MOTSettingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD5A9DC2027EBBA00A523C3 /* MOTSettingObject.m */; };
 		ACE153F81FE0B74A006FD911 /* MOTOvertimeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE153F61FE0B74A006FD911 /* MOTOvertimeListViewController.m */; };
 		ACE153F91FE0B74A006FD911 /* MOTOvertimeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE153F71FE0B74A006FD911 /* MOTOvertimeListViewController.xib */; };
 		ACE153FD1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE153FB1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.m */; };
@@ -206,6 +207,8 @@
 		AC792E881FDE5AF00052C24C /* ToastManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastManager.m; sourceTree = "<group>"; };
 		AC792E8A1FDE5F980052C24C /* LogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogManager.h; sourceTree = "<group>"; };
 		AC792E8B1FDE5F980052C24C /* LogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogManager.m; sourceTree = "<group>"; };
+		ACD5A9DB2027EBBA00A523C3 /* MOTSettingObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTSettingObject.h; sourceTree = "<group>"; };
+		ACD5A9DC2027EBBA00A523C3 /* MOTSettingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTSettingObject.m; sourceTree = "<group>"; };
 		ACE153F51FE0B74A006FD911 /* MOTOvertimeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTOvertimeListViewController.h; sourceTree = "<group>"; };
 		ACE153F61FE0B74A006FD911 /* MOTOvertimeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTOvertimeListViewController.m; sourceTree = "<group>"; };
 		ACE153F71FE0B74A006FD911 /* MOTOvertimeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MOTOvertimeListViewController.xib; sourceTree = "<group>"; };
@@ -553,6 +556,8 @@
 				AC792E881FDE5AF00052C24C /* ToastManager.m */,
 				AC792E8A1FDE5F980052C24C /* LogManager.h */,
 				AC792E8B1FDE5F980052C24C /* LogManager.m */,
+				ACD5A9DB2027EBBA00A523C3 /* MOTSettingObject.h */,
+				ACD5A9DC2027EBBA00A523C3 /* MOTSettingObject.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -816,6 +821,7 @@
 				ACE153F81FE0B74A006FD911 /* MOTOvertimeListViewController.m in Sources */,
 				AC792E531FDE1CA30052C24C /* BFClientData.m in Sources */,
 				AC792E521FDE1CA30052C24C /* BFCommonMetrics.m in Sources */,
+				ACD5A9DD2027EBBA00A523C3 /* MOTSettingObject.m in Sources */,
 				AC792E761FDE1D850052C24C /* main.m in Sources */,
 				AC792E4D1FDE1CA30052C24C /* BFDebuggingTools.m in Sources */,
 				AC792E501FDE1CA30052C24C /* BFDeviceUtilities.m in Sources */,

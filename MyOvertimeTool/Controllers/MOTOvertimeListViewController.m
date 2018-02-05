@@ -11,7 +11,6 @@
 
 @interface MOTOvertimeListViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSArray *data;
-    NSArray *types;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -30,7 +29,6 @@
 - (void)setupUIAndData {
     // data
     data = [[FMDBManager sharedManager] fetchAllOvertimes];
-    types = [[FMDBManager sharedManager] fetchOvertimeTypes];
     
     // UI
     [_tableView registerNib:[UINib nibWithNibName:@"MOTOvertimeListTableViewCell" bundle:nil] forCellReuseIdentifier:@"overtimeListCell"];
@@ -49,12 +47,12 @@
     MOTOvertimeListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"overtimeListCell"];
     
     NSDictionary *overtime = data[indexPath.row];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %ld", [overtime[@"type"] integerValue]];
-    NSDictionary *type = [types filteredArrayUsingPredicate:predicate].firstObject;
-    cell.typeLabel.text = type[@"title"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"idI = %ld", [overtime[@"type"] integerValue]];
+    MOTSettingObject *type = [[FMDBManager sharedManager].overtimeTypes filteredArrayUsingPredicate:predicate].firstObject;
+    cell.typeLabel.text = type.title;
     cell.timeLabel.text = overtime[@"time"];
     cell.reasonLabel.text = [NSString stringWithFormat:@"缘由：%@", overtime[@"reason"]];
-    cell.statusLabel.text = [NSString stringWithFormat:@"%.1f", 1.0 / [type[@"value"] floatValue]];
+    cell.statusLabel.text = [NSString stringWithFormat:@"%.1f", 1.0 / [type.value floatValue]];
     
     return cell;
 }

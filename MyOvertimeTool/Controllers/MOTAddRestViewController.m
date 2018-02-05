@@ -163,7 +163,7 @@
     }
     
     // 再查询还有几天假
-    if ([[FMDBManager sharedManager] fetchRestDays] < [self calcTotalDays]) {
+    if ([[FMDBManager sharedManager].restLefts.firstObject.value floatValue] < [self calcTotalDays]) {
         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"警告" message:@"调休的天数大于可调休的天数，这意味着需要另行请假，是否继续？" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"是，确认请假" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

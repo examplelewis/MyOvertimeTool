@@ -28,7 +28,7 @@ static FMDBManager *_sharedManager;
         [self createDatabase];
         if ([db open]) {
             [self createTable];
-            [db close];
+            [self fetchAllSettings];
         } else {
             [self openDatabaseError];
         }
@@ -44,6 +44,7 @@ static FMDBManager *_sharedManager;
 
 #pragma mark - 创建数据库
 - (void)createDatabase {
+//    NSLog(@"%@", BFPathForDocumentsResource(@"data.sqlite"));
     db = [FMDatabase databaseWithPath:BFPathForDocumentsResource(@"data.sqlite")];
 }
 - (void)createTable {
@@ -108,20 +109,22 @@ static FMDBManager *_sharedManager;
 
 #pragma mark - 业务逻辑 - 查询
 /**
- * 查询所有的加班种类
+ * 查询所有的设置参数
  */
-- (NSArray *)fetchOvertimeTypes {
+- (void)fetchAllSettings {
     if (![db open]) {
         [self openDatabaseError];
+        _overtimeTypes = @[];
+        _restLefts = @[];
         
-        return @[];
+        return;
     }
     
     // 为数据库设置缓存，提高查询效率
     [db setShouldCacheStatements:YES];
     
     NSMutableArray *fetched = [NSMutableArray array];
-    FMResultSet *rs = [db executeQuery:@"select * from MOTSetting where key = 'overtimeType'"];
+    FMResultSet *rs = [db executeQuery:@"select * from MOTSetting"];
     while ([rs next]) {
         NSInteger typeId = [rs intForColumn:@"id"];
         NSString *title = [rs stringForColumn:@"title"];
@@ -129,13 +132,16 @@ static FMDBManager *_sharedManager;
         NSString *key = [rs stringForColumn:@"key"];
         NSString *desc = [rs stringForColumn:@"desc"];
         
-        [fetched addObject:@{@"id": @(typeId), @"title": title, @"value": value, @"key": key, @"desc": desc}];
+        NSDictionary *dictionary = @{@"id": @(typeId), @"title": title, @"value": value, @"key": key, @"desc": desc};
+        MOTSettingObject *object = [[MOTSettingObject alloc] initWithDictionary:dictionary];
+        [fetched addObject:object];
     }
+    
+    _overtimeTypes = [fetched filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"type = %ld", MOTSettingOvertimeType]];
+    _restLefts = [fetched filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"type = %ld", MOTSettingRestLeft]];
     
     [rs close];
     [db close];
-    
-    return [fetched copy];
 }
 /**
  * 查询所有的加班
@@ -203,29 +209,6 @@ static FMDBManager *_sharedManager;
     return [fetched copy];
 }
 /**
- * 查询剩余休息的天数
- */
-- (float)fetchRestDays {
-    if (![db open]) {
-        [self openDatabaseError];
-        
-        return YES; // 这个地方可能出现重复提示的问题
-    }
-    
-    // 为数据库设置缓存，提高查询效率
-    [db setShouldCacheStatements:YES];
-    
-    float left = 0;
-    FMResultSet *rs = [db executeQuery:@"select value from MOTSetting where key = 'restLeft'"];
-    while ([rs next]) {
-        left = [[rs stringForColumn:@"value"] floatValue];
-    }
-    [rs close];
-    [db close];
-    
-    return left;
-}
-/**
  * 查询是否当天已经有加班记录了
  */
 - (BOOL)checkHasOvertimeOnDay:(NSString *)day {
@@ -288,8 +271,7 @@ static FMDBManager *_sharedManager;
     NSString *result = @"\n没有记录\n";
     FMResultSet *rs = [db executeQuery:@"select * from MOTRest order by start desc limit 1"];
     while ([rs next]) {
-        result = [rs stringForColumn:@"start"];
-        result = [result stringByAppendingFormat:@"\n~\n%@", [rs stringForColumn:@"end"]];
+        result = [NSString stringWithFormat:@"%@\n~\n%@", [rs stringForColumn:@"start"], [rs stringForColumn:@"end"]];
     }
     
     [rs close];
@@ -368,13 +350,7 @@ static FMDBManager *_sharedManager;
     // 为数据库设置缓存，提高查询效率
     [db setShouldCacheStatements:YES];
     
-    float left = 0;
-    FMResultSet *rs = [db executeQuery:@"select value from MOTSetting where key = 'restLeft'"];
-    while ([rs next]) {
-        left = [[rs stringForColumn:@"value"] floatValue];
-    }
-    [rs close];
-    
+    float left = [_restLefts.firstObject.value floatValue];
     if (plus) {
         left += day;
     } else {
@@ -395,6 +371,8 @@ static FMDBManager *_sharedManager;
         NSString *errorData = [NSString stringWithFormat:@"value: %.1f", left];
         [[ToastManager sharedManager] showError:errorMsg];
         [[LogManager sharedManager] logError:errorMsg data:errorData];
+    } else {
+        [self fetchAllSettings];
     }
     
     return success;

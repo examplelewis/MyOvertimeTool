@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <FMDB.h>
+#import "MOTSettingObject.h"
 
 @interface FMDBManager : NSObject {
     FMDatabase *db;
 }
 
+@property (nonatomic, strong) NSArray<MOTSettingObject *> *overtimeTypes;
+@property (nonatomic, strong) NSArray<MOTSettingObject *> *restLefts;
+
 + (FMDBManager *)sharedManager;
 
-- (NSArray *)fetchOvertimeTypes;
 - (NSArray *)fetchAllOvertimes;
 - (NSArray *)fetchAllRests;
 - (BOOL)checkHasOvertimeOnDay:(NSString *)day;
-- (float)fetchRestDays;
 - (NSString *)fetchLatestTimeOfOvertime;
 - (NSString *)fetchLatestTimeOfRest;
 

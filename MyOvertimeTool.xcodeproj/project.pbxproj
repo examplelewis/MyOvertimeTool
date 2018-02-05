@@ -63,6 +63,8 @@
 		AC792E891FDE5AF00052C24C /* ToastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E881FDE5AF00052C24C /* ToastManager.m */; };
 		AC792E8C1FDE5F980052C24C /* LogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792E8B1FDE5F980052C24C /* LogManager.m */; };
 		ACD5A9DD2027EBBA00A523C3 /* MOTSettingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD5A9DC2027EBBA00A523C3 /* MOTSettingObject.m */; };
+		ACD5A9E12027FCEA00A523C3 /* MOTOvertimeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD5A9DF2027FCEA00A523C3 /* MOTOvertimeMainViewController.m */; };
+		ACD5A9E22027FCEA00A523C3 /* MOTOvertimeMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACD5A9E02027FCEA00A523C3 /* MOTOvertimeMainViewController.xib */; };
 		ACE153F81FE0B74A006FD911 /* MOTOvertimeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE153F61FE0B74A006FD911 /* MOTOvertimeListViewController.m */; };
 		ACE153F91FE0B74A006FD911 /* MOTOvertimeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE153F71FE0B74A006FD911 /* MOTOvertimeListViewController.xib */; };
 		ACE153FD1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE153FB1FE0BA89006FD911 /* MOTOvertimeListTableViewCell.m */; };
@@ -209,6 +211,9 @@
 		AC792E8B1FDE5F980052C24C /* LogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogManager.m; sourceTree = "<group>"; };
 		ACD5A9DB2027EBBA00A523C3 /* MOTSettingObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTSettingObject.h; sourceTree = "<group>"; };
 		ACD5A9DC2027EBBA00A523C3 /* MOTSettingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTSettingObject.m; sourceTree = "<group>"; };
+		ACD5A9DE2027FCEA00A523C3 /* MOTOvertimeMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTOvertimeMainViewController.h; sourceTree = "<group>"; };
+		ACD5A9DF2027FCEA00A523C3 /* MOTOvertimeMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTOvertimeMainViewController.m; sourceTree = "<group>"; };
+		ACD5A9E02027FCEA00A523C3 /* MOTOvertimeMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MOTOvertimeMainViewController.xib; sourceTree = "<group>"; };
 		ACE153F51FE0B74A006FD911 /* MOTOvertimeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOTOvertimeListViewController.h; sourceTree = "<group>"; };
 		ACE153F61FE0B74A006FD911 /* MOTOvertimeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOTOvertimeListViewController.m; sourceTree = "<group>"; };
 		ACE153F71FE0B74A006FD911 /* MOTOvertimeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MOTOvertimeListViewController.xib; sourceTree = "<group>"; };
@@ -531,6 +536,9 @@
 		AC792E7B1FDE29470052C24C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ACD5A9DE2027FCEA00A523C3 /* MOTOvertimeMainViewController.h */,
+				ACD5A9DF2027FCEA00A523C3 /* MOTOvertimeMainViewController.m */,
+				ACD5A9E02027FCEA00A523C3 /* MOTOvertimeMainViewController.xib */,
 				AC1BD2A01FDF790000FEFAFD /* MOTAddOvertimeViewController.h */,
 				AC1BD2A11FDF790000FEFAFD /* MOTAddOvertimeViewController.m */,
 				AC1BD2A21FDF790000FEFAFD /* MOTAddOvertimeViewController.xib */,
@@ -689,6 +697,7 @@
 				AC792DC31FDE143D0052C24C /* LaunchScreen.storyboard in Resources */,
 				ACE153F91FE0B74A006FD911 /* MOTOvertimeListViewController.xib in Resources */,
 				AC792DC01FDE143D0052C24C /* Assets.xcassets in Resources */,
+				ACD5A9E22027FCEA00A523C3 /* MOTOvertimeMainViewController.xib in Resources */,
 				AC792DBE1FDE143D0052C24C /* Main.storyboard in Resources */,
 				AC792E7A1FDE27560052C24C /* welcome.jpeg in Resources */,
 				ACE154031FE0C23F006FD911 /* MOTAddRestViewController.xib in Resources */,
@@ -817,6 +826,7 @@
 				AC792E8C1FDE5F980052C24C /* LogManager.m in Sources */,
 				AC792E591FDE1CA30052C24C /* BFCollectionUtils.m in Sources */,
 				AC792E891FDE5AF00052C24C /* ToastManager.m in Sources */,
+				ACD5A9E12027FCEA00A523C3 /* MOTOvertimeMainViewController.m in Sources */,
 				AC792E4A1FDE1CA30052C24C /* BFAppUtils.m in Sources */,
 				ACE153F81FE0B74A006FD911 /* MOTOvertimeListViewController.m in Sources */,
 				AC792E531FDE1CA30052C24C /* BFClientData.m in Sources */,
